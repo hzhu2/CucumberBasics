@@ -11,3 +11,15 @@ Feature: LoginFeature
       | admin2   | admin2password |
     And I click login button
     Then I should see the userform page
+
+
+  Scenario Outline: Login with the correct username and password using Scenario outline
+    Given I navigate to the login page
+    And I enter <username> and <password>
+    And I click login button
+    Then I should see the userform page
+
+    Examples:
+      | username | password       |
+      | Outline_admin1   | Outline_admin1password |
+      | Outline_admin2   | Outline_admin2password |
