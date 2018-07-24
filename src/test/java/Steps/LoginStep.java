@@ -37,7 +37,6 @@ public class LoginStep {
     @And("^I enter the following for login$")
     public void iEnterTheFollowingForLogin(DataTable table) throws Throwable {
         List<List<String>> data = table.raw();
-
         System.out.println("The Value1 is : " + data.get(0).get(0));
         System.out.println("The Value1 is : " + data.get(0).get(1));
         System.out.println("The Value2 is : " + data.get(1).get(0));
