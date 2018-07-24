@@ -1,6 +1,7 @@
 package Steps;
 
 import cucumber.api.DataTable;
+import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -17,7 +18,7 @@ public class LoginStep {
 
     @And("^I enter the username as admin and password as admin$")
     public void iEnterTheUsernameAsAdminAndPasswordAsAdmin() throws Throwable {
-
+        System.out.println("I enter the username as admin and password as admin, hardcoded");
     }
 
     @And("^I click login button$")
@@ -60,10 +61,11 @@ public class LoginStep {
 
     }
 
-    @And("^I enter ([^\"]*) and ([^\"]*)$")
-    public void iEnterUsernameAndPassword(String userName, String password) throws Throwable {
-        System.out.println("Username is :" + userName);
-        System.out.println("Password is :" + password);
+    @And("^I key in ([^\"]*) and ([^\"]*)$")
+    public void iEnterUsernameAndPassword(String username, String password) throws Throwable {
+        System.out.println("Username is : " + username);
+        System.out.println("Password is : " + password);
+
     }
 
     public class User
