@@ -1,5 +1,6 @@
 package Steps;
 
+import Base.BaseUtil;
 import cucumber.api.DataTable;
 import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
@@ -9,7 +10,14 @@ import cucumber.api.java.en.Then;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LoginStep {
+public class LoginStep extends BaseUtil {
+
+    private BaseUtil base;
+
+    public LoginStep(BaseUtil base) {
+        this.base = base;
+    }
+
     @Given("^I navigate to the login page$")
     public void iNavigateToTheLoginPage() throws Throwable {
         System.out.println("Navigate to login page");
@@ -28,6 +36,10 @@ public class LoginStep {
 
     @Then("^I should see the userform page$")
     public void iShouldSeeTheUserformPage() throws Throwable {
+
+        System.out.println("The driver is : " + base.StepInfo);
+
+        System.out.println("I should see userform page");
 
     }
 
